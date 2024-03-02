@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    height: 10%;
+    display: flex;
+}
+
+header img {
+    height: 100%;
+    margin: 10px auto;
+}
+
+.poster {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster .box {
+    height: 90%;
+    width: 80%;
+    border-radius: 25px;
+    background-color: #5EBBFF;
+    display: flex;
+}
+
+
+.bem-vindo {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.bem-vindo h1 {
+    font-size: 4em;
+    font-family: "Epilogue", sans-serif;
+    color: #FFFFFF;
+}
+
+.div-aviao {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.div-aviao img {
+    width: 200%;
+    transform: translateX(-50px);
+}
+
+
+.introducao {
+    height: fit-content;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.introducao p {
+    text-align: center;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #5EBBFF;
+}
+
+.introducao h3 {
+    padding: 0 10vw;
+    font-size: 2.6em;
+    text-align: center;
+    font-family: "Epilogue", sans-serif;
+    color: #000000;
+}
+
+.introducao img {
+    width: 55%;
+    margin: 0 auto;
+}
