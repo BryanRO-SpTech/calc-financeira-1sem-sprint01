@@ -92,3 +92,10 @@ header img {
     width: 55%;
     margin: 0 auto;
 }
+
+.calculadora {
+    margin: 0 auto;
+    width: 80vw;
+    height: 70vh;
+    background-color: #5EBBFF;
+}
