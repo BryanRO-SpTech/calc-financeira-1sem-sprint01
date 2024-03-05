@@ -128,6 +128,16 @@ header img {
     font-size: 16px;
 }
 
+.submit {
+    width: 40%;
+}
+
+.input label {
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+    text-indent: 10px;
+}
+
 #resultado {
     border: blue solid 1px;
     width: 50%;
