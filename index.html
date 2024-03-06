@@ -42,8 +42,8 @@
                     <input id="input_qtd" type="number">
                 </div>
                 <div class="input">
-                    <label for="input_media">Média de Tempo da Aeronave Fora de Serviço por Manutenção (Em horas)</label>
-                    <input id="input_media" type="number">
+                    <label for="input_media">Tempo da Aeronave Fora de Serviço por Manutenção (Em horas)</label>
+                    <input id="input_tempo" type="number">
                 </div>
 
                 <div class="submit">
@@ -52,10 +52,16 @@
             </form>
 
         <div id="resultado">
-            <div class="grafico"></div>
-            <span class="economia"></span>
+            <div class="grafico">
+                <div id="economia"><span>Economia</span></div>
+                <div id="prejuizo"><span>Prejuizo</span></div>
+            </div>
+            <div id="div_mensagem">Com nosso sistema de monitoramento, terá uma economia de até: <span class="tamanhoResult">60%</span></div>
         </div>
     </section>
+    
+
+    <script src="./main.js"></script>
 </body>
 
 </html>

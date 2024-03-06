@@ -2,11 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+:root {
+    --tamanhoEconomia: 0;
+    --tamanhoPrejuizo: 0;
+    --tamanho-fonte-grafico: 0;
+}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Epilogue", sans-serif;
 }
 
 body {
@@ -128,7 +135,8 @@ header img {
 }
 
 .input label {
-
+    padding: 4px;
+    font-size: 14px;
     font-weight: bold;
     text-indent: 10px;
 }
@@ -159,13 +167,84 @@ header img {
     width: 50%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+
 }
 
 .grafico {
-    width: 300px;
-    height: 200px;
-    border: 25px solid black;
-    border-bottom: none;
-    border-radius: 50% 50% 0 0;
+    width: 80%;
+    height: 7%;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+}
+
+#economia {
+    height: 100%;
+    width: var(--tamanhoEconomia);
+    background: rgb(0,128,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px 0 0 18px;
+    font-size: 0;
+    font-size: var(--tamanho-fonte-grafico);
+}
+
+#prejuizo {
+    height: 100%;
+    width: var(--tamanhoPrejuizo);
+    background-color: rgba(255,0,0,0.7203256302521008);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 18px 18px 0;
+    font-size: var(--tamanho-fonte-grafico);
+}
+
+
+#div_mensagem {
+    font-weight: bold;
+    font-size: 25px;
+    text-wrap: pretty;
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+}
+
+#div_mensagem .tamanhoResult{
+    font-size: 40px;
+    color: green;
+    text-shadow: #000000 2px 2px;
+
+}
+
+
+
+@keyframes graficoEconomia {
+    0% {
+        width: 0;
+        font-size: 0;
+    }
+
+    100% {
+        width: var(--tamanhoEconomia);
+        font-size: var(--tamanho-fonte-grafico);
+    }
+}
+
+@keyframes graficoPrejuizo {
+    0% {
+        width: 0;
+        font-size: 0;
+    }
+
+    100% {
+        width: var(--tamanhoPrejuizo);
+        font-size: var(--tamanho-fonte-grafico);
+    }
 }
