@@ -163,7 +163,6 @@ header img {
 }
 
 #resultado {
-    border: blue solid 1px;
     width: 50%;
     display: flex;
     justify-content: center;

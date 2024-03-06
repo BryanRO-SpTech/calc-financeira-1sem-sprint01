@@ -32,18 +32,18 @@
     </section>
 
     <section class="calculadora">
-            <form id="calc_form">
+            <form id="calc_form" onsubmit="exibirDados()">
                 <div class="input">
                     <label for="input_aviao">Nome do avião</label>
-                    <input id="input_aviao" type="text">
+                    <input id="input_aviao" type="text" required>
                 </div>
                 <div class="input">
                     <label for="input_qtd">Quantidade de Correções Corretivas (Anuais)</label>
-                    <input id="input_qtd" type="number">
+                    <input id="input_qtd" type="number" required>
                 </div>
                 <div class="input">
-                    <label for="input_media">Tempo da Aeronave Fora de Serviço por Manutenção (Em horas)</label>
-                    <input id="input_tempo" type="number">
+                    <label for="input_media">Tempo da Aeronave Fora de Serviço por Manutenção (Por dia)</label>
+                    <input id="input_tempo" type="number" required>
                 </div>
 
                 <div class="submit">
@@ -56,7 +56,7 @@
                 <div id="economia"><span>Economia</span></div>
                 <div id="prejuizo"><span>Prejuizo</span></div>
             </div>
-            <div id="div_mensagem">Com nosso sistema de monitoramento, terá uma economia de até: <span class="tamanhoResult">60%</span></div>
+            <div id="div_mensagem"></div>
         </div>
     </section>
     
