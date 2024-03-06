@@ -102,7 +102,6 @@ header img {
 }
 
 #calc_form {
-    border: red solid 1px;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -128,17 +127,45 @@ header img {
     font-size: 16px;
 }
 
+.input label {
+
+    font-weight: bold;
+    text-indent: 10px;
+}
+
 .submit {
     width: 40%;
 }
 
-.input label {
+.submit input {
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
     font-family: "Epilogue", sans-serif;
     font-weight: bold;
-    text-indent: 10px;
+    background-color: #ecf6fd;
+    transition: 0.5s;
+}
+
+.submit input:hover {
+    color: white;
+    background-color: #0270ff;
 }
 
 #resultado {
     border: blue solid 1px;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grafico {
+    width: 300px;
+    height: 200px;
+    border: 25px solid black;
+    border-bottom: none;
+    border-radius: 50% 50% 0 0;
 }
