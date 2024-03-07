@@ -42,7 +42,7 @@
                     <input id="input_qtd" type="number" required>
                 </div>
                 <div class="input">
-                    <label for="input_media">Tempo da Aeronave Fora de Serviço por Manutenção (Por dia)</label>
+                    <label for="input_media">Tempo da Aeronave Fora de Serviço por Manutenção (Em dias)</label>
                     <input id="input_tempo" type="number" required>
                 </div>
 
@@ -52,9 +52,10 @@
             </form>
 
         <div id="resultado">
+            <p>Gráfico de ecônomia</p>
             <div class="grafico">
-                <div id="economia"><span>Economia</span></div>
-                <div id="prejuizo"><span>Prejuizo</span></div>
+                <div id="economia"></div>
+                <div id="prejuizo"></div>
             </div>
             <div id="div_mensagem"></div>
         </div>

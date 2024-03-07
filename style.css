@@ -5,7 +5,6 @@
 :root {
     --tamanhoEconomia: 0;
     --tamanhoPrejuizo: 0;
-    --tamanho-fonte-grafico: 0;
 }
 
 
@@ -213,15 +212,30 @@ header img {
     text-align: center;
     width: 80%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#div_mensagem .tamanhoResult{
+#div_mensagem .tamanhoResult {
     font-size: 40px;
     color: green;
     text-shadow: #000000 2px 2px;
-
 }
 
+#div_mensagem .temperatura {
+    font-size: 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: #000000 2px 2px;
+}
+
+
+table, tr, td {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px rgb(0, 0, 0) solid;
+    border-collapse: collapse;
+}
 
 
 @keyframes graficoEconomia {
@@ -232,7 +246,6 @@ header img {
 
     100% {
         width: var(--tamanhoEconomia);
-        font-size: var(--tamanho-fonte-grafico);
     }
 }
 
@@ -244,6 +257,5 @@ header img {
 
     100% {
         width: var(--tamanhoPrejuizo);
-        font-size: var(--tamanho-fonte-grafico);
     }
 }
