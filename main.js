@@ -1,10 +1,8 @@
 function capturaDeDados() {
-    const modeloAviao = input_aviao.value;
     const qtdManutencoes = Number(input_qtd.value);
     const tempoParado = Number(input_tempo.value);
 
     return {
-        modeloAviao,
         qtdManutencoes,
         tempoParado
     };
