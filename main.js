@@ -4,65 +4,66 @@ function capturaDeDados() {
 
     if (qtdManutencoes <= 0 || tempoParado <= 0) {
         return alert("A quantidade de manutenções e tempo parado precisam ser maior do que 0!");
-
-
-        return {
-            qtdManutencoes,
-            tempoParado
-        };
     }
 
-    function calcularEconomia() {
-        const { qtdManutencoes, tempoParado } = capturaDeDados();
 
-        /*
-          Calculando quanto foi gasto de manutenções durante o ano, 
-          levando em conta o valor médio de manutenções em aeronaves e média de gasto por dia parado.
-         */
-        const gastoManutencao = qtdManutencoes * 100_000_000;
-        const gastoParado = (tempoParado * 1_200_000) * qtdManutencoes;
-        const gastoFuncionarios = (tempoParado * (8_000 * 5)); // Em uma manutenção de um motor, em média é necessário 5 engenheiros e em média ganam 8 mil.
-        const gastoTotal = gastoManutencao + gastoParado + gastoFuncionarios;;
+    return {
+        qtdManutencoes,
+        tempoParado
+    };
+}
 
-        const totalComEconomia = gastoTotal - (gastoTotal * 0.30);
-        const economia = gastoTotal - totalComEconomia;
-        const prejuizoPercentual = (totalComEconomia / gastoTotal) * 100;
+function calcularEconomia() {
+    const { qtdManutencoes, tempoParado } = capturaDeDados();
 
-        return {
-            gastoManutencao,
-            gastoParado,
-            gastoFuncionarios,
-            gastoTotal,
-            totalComEconomia,
-            prejuizoPercentual,
-            economia
-        };
-    }
+    /*
+      Calculando quanto foi gasto de manutenções durante o ano, 
+      levando em conta o valor médio de manutenções em aeronaves e média de gasto por dia parado.
+     */
+    const gastoManutencao = qtdManutencoes * 100_000_000;
+    const gastoParado = (tempoParado * 1_200_000) * qtdManutencoes;
+    const gastoFuncionarios = (tempoParado * (8_000 * 5)); // Em uma manutenção de um motor, em média é necessário 5 engenheiros e em média ganam 8 mil.
+    const gastoTotal = gastoManutencao + gastoParado + gastoFuncionarios;;
 
-    function exibirDados() {
-        event.preventDefault();
+    const totalComEconomia = gastoTotal - (gastoTotal * 0.30);
+    const economia = gastoTotal - totalComEconomia;
+    const prejuizoPercentual = (totalComEconomia / gastoTotal) * 100;
 
+    return {
+        gastoManutencao,
+        gastoParado,
+        gastoFuncionarios,
+        gastoTotal,
+        totalComEconomia,
+        prejuizoPercentual,
+        economia
+    };
+}
 
-        const { gastoManutencao, gastoParado, gastoFuncionarios, gastoTotal, totalComEconomia, prejuizoPercentual, economia } = calcularEconomia();
-
-        const graficoEconomia = document.getElementById("economia");
-        const graficoPrejuizo = document.getElementById("prejuizo");
-
-        document.documentElement.style = `--tamanhoEconomia: ${100 - prejuizoPercentual}%; --tamanhoPrejuizo: ${prejuizoPercentual}%; --tamanho-fonte-grafico: 1em;`;
-
-        //Iniciar animação do gráfico.
-        graficoEconomia.style.animation = "graficoEconomia 2s linear";
-        graficoPrejuizo.style.animation = "graficoPrejuizo 2s linear";
-
-        // Inserir valores em dinheiro dentro do grafico.
-        graficoEconomia.innerHTML = `${economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
-        graficoPrejuizo.innerHTML = `${totalComEconomia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+function exibirDados() {
+    event.preventDefault();
 
 
+    const { gastoManutencao, gastoParado, gastoFuncionarios, gastoTotal, totalComEconomia, prejuizoPercentual, economia } = calcularEconomia();
 
-        const mensagem = document.getElementById("div_mensagem");
+    const graficoEconomia = document.getElementById("economia");
+    const graficoPrejuizo = document.getElementById("prejuizo");
 
-        mensagem.innerHTML = `
+    document.documentElement.style = `--tamanhoEconomia: ${100 - prejuizoPercentual}%; --tamanhoPrejuizo: ${prejuizoPercentual}%; --tamanho-fonte-grafico: 1em;`;
+
+    //Iniciar animação do gráfico.
+    graficoEconomia.style.animation = "graficoEconomia 2s linear";
+    graficoPrejuizo.style.animation = "graficoPrejuizo 2s linear";
+
+    // Inserir valores em dinheiro dentro do grafico.
+    graficoEconomia.innerHTML = `${economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+    graficoPrejuizo.innerHTML = `${totalComEconomia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+
+
+
+    const mensagem = document.getElementById("div_mensagem");
+
+    mensagem.innerHTML = `
     <p>Cerca de <span class="tamanhoResult">30%</span> dos problemas em motores de aeronaves se tratam de problemas relacionados a <span class="temperatura">temperatura.</span><br></p>
     
 
@@ -108,4 +109,4 @@ function capturaDeDados() {
     </div>
     `;
 
-    }
+}
