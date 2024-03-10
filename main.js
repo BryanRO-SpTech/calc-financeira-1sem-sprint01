@@ -2,6 +2,7 @@ function capturaDeDados() {
     const qtdManutencoes = Number(input_qtd.value);
     const tempoParado = Number(input_tempo.value);
 
+
     return {
         qtdManutencoes,
         tempoParado
@@ -15,9 +16,10 @@ function calcularEconomia() {
       Calculando quanto foi gasto de manutenções durante o ano, 
       levando em conta o valor médio de manutenções em aeronaves e média de gasto por dia parado.
      */
-    const gastoManutencao = qtdManutencoes * 250_000;
-    const gastoParado = (tempoParado * 25_000) * qtdManutencoes;
-    const gastoTotal = gastoManutencao + gastoParado;
+    const gastoManutencao = qtdManutencoes * 100_000_000;
+    const gastoParado = (tempoParado * 1_200_000) * qtdManutencoes;
+    const gastoFuncionarios = (tempoParado * (8_000 * 5)); // Em uma manutenção de um motor, em média é necessário 5 engenheiros e em média ganam 8 mil.
+    const gastoTotal = gastoManutencao + gastoParado + gastoFuncionarios;;
 
     const totalComEconomia = gastoTotal - (gastoTotal * 0.30);
     const economia = gastoTotal - totalComEconomia;
@@ -26,6 +28,7 @@ function calcularEconomia() {
     return {
         gastoManutencao,
         gastoParado,
+        gastoFuncionarios,
         gastoTotal,
         totalComEconomia,
         prejuizoPercentual,
@@ -37,7 +40,7 @@ function exibirDados() {
     event.preventDefault();
 
 
-    const { gastoManutencao, gastoParado, gastoTotal, totalComEconomia, prejuizoPercentual, economia } = calcularEconomia();
+    const { gastoManutencao, gastoParado, gastoFuncionarios, gastoTotal, totalComEconomia, prejuizoPercentual, economia } = calcularEconomia();
 
     const graficoEconomia = document.getElementById("economia");
     const graficoPrejuizo = document.getElementById("prejuizo");
@@ -73,6 +76,11 @@ function exibirDados() {
     </tr>
     
     <tr>
+        <th>Gastos com funcionarios</th>
+        <td>${gastoFuncionarios.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+    </tr>
+    
+    <tr>
         <th>Gastos totais sem monitoramento</th>
         <td>${gastoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
         
@@ -88,6 +96,13 @@ function exibirDados() {
             <td>${totalComEconomia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
         </tr>
     </table>
+
+    <p class="mensagemEconomia">Sua ecônomia será: ${economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+
+    <div class="contratar">
+        <img id="seta" src="./public/seta-direita.png"/>
+        <button id="contratar">Contratar!</button>
+    </div>
     `;
 
 }

@@ -237,6 +237,33 @@ table, tr, td {
     border-collapse: collapse;
 }
 
+.mensagemEconomia {
+    font-size: 28px;
+    animation: 3s infinite linear mensagemEconomiaMove;
+}
+
+#contratar {
+    width: 50%;
+    margin: auto;
+    font-size: 26px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0270ff;
+    padding: 10px;
+    animation: 3s infinite linear botaoContato;
+    font-weight: bold;
+    color: white;
+}
+
+.contratar {
+    display: flex;
+}
+
+#seta {
+    width: 10%;
+    transform: translateX(100px);
+    animation: 1.5s infinite linear setaBotaoContato;
+}
 
 @keyframes graficoEconomia {
     0% {
@@ -257,5 +284,33 @@ table, tr, td {
 
     100% {
         width: var(--tamanhoPrejuizo);
+    }
+}
+
+@keyframes mensagemEconomiaMove {
+    0% {
+        color: #000000;
+    }
+
+    50%{
+        color: green;
+    }
+    
+    100%{
+        color: #000000;
+    }
+}
+
+@keyframes setaBotaoContato {
+    0% {
+        transform: translateX(75px);
+    }
+    
+    50% {
+        transform: translateX(100px);
+    }
+    
+    100% {
+        transform: translateX(75px);
     }
 }
