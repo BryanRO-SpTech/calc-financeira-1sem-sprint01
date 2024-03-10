@@ -2,6 +2,10 @@ function capturaDeDados() {
     const qtdManutencoes = Number(input_qtd.value);
     const tempoParado = Number(input_tempo.value);
 
+    if (qtdManutencoes <= 0 || tempoParado <= 0) {
+        return alert("A quantidade de manutenções e tempo parado precisam ser maior do que 0!");
+    }
+
     return {
         qtdManutencoes,
         tempoParado

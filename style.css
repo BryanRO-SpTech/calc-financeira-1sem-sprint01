@@ -188,7 +188,8 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 18px 0 0 18px;
+    
+    border-radius: 0 18px 18px 0;
     font-size: 0;
     font-size: var(--tamanho-fonte-grafico);
 }
@@ -200,7 +201,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0 18px 18px 0;
+    border-radius: 18px 0 0 18px;
     font-size: var(--tamanho-fonte-grafico);
 }
 
